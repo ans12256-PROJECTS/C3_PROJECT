@@ -18,7 +18,7 @@ Original data *.clean.json files are rows of dictionaries, that would not import
 df=pd.read_json('../data/places.clean.json')
 ```
 
-* [json_convert.py]('src/json_convert.py') this script reads, processes, and saves original json files in pandas readable format. total run time 1h 43 minutes
+* [json_convert.py](src/json_convert.py) this script reads, processes, and saves original json files in pandas readable format. total run time 1h 43 minutes
 ```
 base) alexey_imac@ALEXEYs-iMac src % python json_convert.py
 STEP 1 df_places load time: 2.7260870933532715
