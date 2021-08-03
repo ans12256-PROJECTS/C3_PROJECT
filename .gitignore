@@ -1,3 +1,13 @@
+# August 3, 2021, ignore *.json files in data subdirectory
+# or rather ALL files
+data/
+
+# ignore .DS_STORE (file is a Mac OS X folder information file)
+**/**/.DS_STORE
+
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
