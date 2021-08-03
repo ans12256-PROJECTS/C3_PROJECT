@@ -1,3 +1,51 @@
+[Proposals](https://docs.google.com/document/d/1DXd0z_BNmHpS3LCCnwTf-8QQH-7FebiE_zQ_-qYw7J0/edit#)
+
+Project Idea #1):
+Topic: Google Local Reviews
+High level description of project: Build recommender(s) using a variety of configurations, deploy on AWS using Spark, finalize on the web using Flask. Explore scalability and performance.
+Data Source(s): [Places Data](http://deepyeti.ucsd.edu/jmcauley/datasets/googlelocal/places.clean.json.gz), [User Data](http://deepyeti.ucsd.edu/jmcauley/datasets/googlelocal/users.clean.json.gz), [Review Data](http://deepyeti.ucsd.edu/jmcauley/datasets/googlelocal/reviews.clean.json.gz)
+Description of Data: These datasets contain reviews about businesses from Google Local (Google Maps). Data includes geographic information for each business as well as reviews.
+Reviews:
+11,453,845
+Users:
+4,567,431
+Businesses:
+3,116,785
+
+# Data Processing
+Original data *.clean.json files are rows of dictionaries, that would not import using standard pandas
+```
+df=pd.read_json('../data/places.clean.json')
+```
+
+* [json_convert.py]('src/json_convert.py') this script reads, processes, and saves original json files in pandas readable format. total run time 1h 43 minutes
+```
+base) alexey_imac@ALEXEYs-iMac src % python json_convert.py
+STEP 1 df_places load time: 2.7260870933532715
+STEP 2 df_places explode time: 816.2096629142761
+STEP 3 df_places save json time: 13.365344047546387
+STEP 4 df_places reload from json time: 39.496094942092896
+STEP 1 df_reviews load time: 7.131134986877441
+STEP 2 df_pdf_reviews explode time: 4040.660280942917
+STEP 3 df_reviews save json time: 117.0224997997284
+STEP 4 df_reviews reload from json time: 153.501229763031
+STEP 1 df_users load time: 1.5642907619476318
+STEP 2 df_users explode time: 934.1211636066437
+STEP 3 df_users save json time: 11.650207996368408
+STEP 4 df_users reload from json time: 39.83325409889221
+Conversion total time: 6183.85197520256
+(base) alexey_imac@ALEXEYs-iMac src %
+```
+
+
+(Optional) Potential Future Employer: Any business with the need to expand understanding of the customer base, and improve returning experience
+Sources: [[1](https://cseweb.ucsd.edu/~jmcauley/datasets.html#google_local)], [[2](http://cseweb.ucsd.edu/~jmcauley/pdfs/recsys18a.pdf)], [[3](http://cseweb.ucsd.edu/~jmcauley/pdfs/recsys17.pdf)]
+Papers:
+* [Translation-based Factorization Machines for Sequential Recommendation](http://cseweb.ucsd.edu/~jmcauley/pdfs/recsys18a.pdf),
+* [Translation-based Recommendation](http://cseweb.ucsd.edu/~jmcauley/pdfs/recsys17.pdf)
+
+
+
 # ML recommender tools, performance and scalability
 ## What are you trying to do?
 * Articulate your objectives using absolutely no jargon (i.e. as if you were explaining to a salesperson, executive, or recruiter). Again, this should be a description of a real world problem, not an algorithm you aspire to use.
@@ -141,4 +189,3 @@ The various datasets all differ in terms of their key metrics. A summary of thes
 * AWS setup
 * Training time estimates
 * Flask Web deployment
-
