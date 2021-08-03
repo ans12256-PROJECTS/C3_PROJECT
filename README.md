@@ -1,18 +1,37 @@
-[Proposals](https://docs.google.com/document/d/1DXd0z_BNmHpS3LCCnwTf-8QQH-7FebiE_zQ_-qYw7J0/edit#)
+* [Proposals](https://docs.google.com/document/d/1DXd0z_BNmHpS3LCCnwTf-8QQH-7FebiE_zQ_-qYw7J0/edit#)
+* [Presentation](https://docs.google.com/presentation/d/1QKpEJZxsz7VvZhyjyRCmVpDFfDcbT5D-QfCfP0AfMNw/edit?usp=sharing)
 
-Project Idea #1):
-Topic: Google Local Reviews
-High level description of project: Build recommender(s) using a variety of configurations, deploy on AWS using Spark, finalize on the web using Flask. Explore scalability and performance.
-Data Source(s): [Places Data](http://deepyeti.ucsd.edu/jmcauley/datasets/googlelocal/places.clean.json.gz), [User Data](http://deepyeti.ucsd.edu/jmcauley/datasets/googlelocal/users.clean.json.gz), [Review Data](http://deepyeti.ucsd.edu/jmcauley/datasets/googlelocal/reviews.clean.json.gz)
-Description of Data: These datasets contain reviews about businesses from Google Local (Google Maps). Data includes geographic information for each business as well as reviews.
-Reviews:
-11,453,845
-Users:
-4,567,431
-Businesses:
-3,116,785
+
+**Project Idea #1):**<br />
+**Topic: Google Local Reviews**<br />
+**High level description of project:**<br />
+Build recommender(s) using a variety of configurations, deploy on AWS using Spark, finalize on the web using Flask. Explore scalability and performance.<br />
+**Data Source(s):**<br />
+* [Places Data](http://deepyeti.ucsd.edu/jmcauley/datasets/googlelocal/places.clean.json.gz),
+* [User Data](http://deepyeti.ucsd.edu/jmcauley/datasets/googlelocal/users.clean.json.gz),
+* [Review Data](http://deepyeti.ucsd.edu/jmcauley/datasets/googlelocal/reviews.clean.json.gz)
+
+**Description of Data:**<br />
+These datasets contain reviews about businesses from Google Local (Google Maps). Data includes geographic information for each business as well as reviews.<br />
+**Reviews:**<br />
+11,453,845<br />
+**Users:**<br />
+4,567,431<br />
+**Businesses:**<br />
+3,116,785<br />
+**(Optional)**<br />
+* Potential Future Employer: Any business with the need to expand understanding of the customer base, and improve returning experience<br />
+
+**Sources:**<br />
+* [[1](https://cseweb.ucsd.edu/~jmcauley/datasets.html#google_local)], [[2](http://cseweb.ucsd.edu/~jmcauley/pdfs/recsys18a.pdf)], [[3](http://cseweb.ucsd.edu/~jmcauley/pdfs/recsys17.pdf)]<br />
+
+**Papers:**
+* [Translation-based Factorization Machines for Sequential Recommendation](http://cseweb.ucsd.edu/~jmcauley/pdfs/recsys18a.pdf),
+* [Translation-based Recommendation](http://cseweb.ucsd.edu/~jmcauley/pdfs/recsys17.pdf)
+
 
 # Data Processing
+## dictionary-like json conversion
 Original data *.clean.json files are rows of dictionaries, that would not import using standard pandas
 ```
 df=pd.read_json('../data/places.clean.json')
@@ -36,13 +55,9 @@ STEP 4 df_users reload from json time: 39.83325409889221
 Conversion total time: 6183.85197520256
 (base) alexey_imac@ALEXEYs-iMac src %
 ```
-
-
-(Optional) Potential Future Employer: Any business with the need to expand understanding of the customer base, and improve returning experience
-Sources: [[1](https://cseweb.ucsd.edu/~jmcauley/datasets.html#google_local)], [[2](http://cseweb.ucsd.edu/~jmcauley/pdfs/recsys18a.pdf)], [[3](http://cseweb.ucsd.edu/~jmcauley/pdfs/recsys17.pdf)]
-Papers:
-* [Translation-based Factorization Machines for Sequential Recommendation](http://cseweb.ucsd.edu/~jmcauley/pdfs/recsys18a.pdf),
-* [Translation-based Recommendation](http://cseweb.ucsd.edu/~jmcauley/pdfs/recsys17.pdf)
+## EDA
+### Locations
+![img](img/Places_TOTAL.png)
 
 
 
