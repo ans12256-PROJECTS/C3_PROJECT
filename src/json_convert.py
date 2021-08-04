@@ -111,4 +111,4 @@ print(f'STEP 4 df_users reload from json time: {time.time() - start}')
 del df_users
 
 
-print(f'Conversion total time: {time.time() - start_total}')
+print(f'Total run time: {round((time.time() - start_total)/60, 2)} minutes')
