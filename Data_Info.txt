@@ -1,0 +1,75 @@
+df_users.info()
+
+# FULL SET:
+# tmp = pd.DataFrame(df_users.isnull().sum(), columns=['NaN counts'])
+# tmp['Populated %'] = (df_users.shape[0] - tmp['NaN counts'])*100/df_users.shape[0]
+
+# Int64Index: 10000 entries, 872833 to 35717 # FULL: 3747937 entries, 0 to 3747936
+# Data columns (total 6 columns):
+#  #   Column          Non-Null Count  Dtype  ==> *100/10,000 = /100
+# ---  ------          --------------  -----  
+#  0   userName        10000 non-null  object 
+#  1   jobs            1775 non-null   object 18% FULL: 18.2%
+#  2   currentPlace    1998 non-null   object 20% FULL: 20%
+#  3   previousPlaces  1077 non-null   object 11% FULL: 11%
+#  4   education       9964 non-null   object 99% FULL
+#  5   gPlusUserId     10000 non-null  float64
+# dtypes: float64(1), object(5)
+# memory usage: 546.9+ KB  # FULL: 200.2+ MB (100 KB = 0.097656 MB) 0.27% of the whole dataset
+# df_users.hist()
+
+
+================================================================================================================
+
+
+df_places.info()
+# FULL SET:
+# tmp = pd.DataFrame(df_places.isnull().sum(), columns=['NaN counts'])
+# tmp['Populated %'] = (df_places.shape[0] - tmp['NaN counts'])*100/df_places.shape[0]
+
+# Data columns (total 8 columns):
+#  #   Column        Non-Null Count  Dtype  
+# ---  ------        --------------  -----  
+#  0   name          10000 non-null  object 
+#  1   price         1315 non-null   object 
+#  2   address       10000 non-null  object 
+#  3   hours         4212 non-null   object 
+#  4   phone         8853 non-null   object 
+#  5   closed        10000 non-null  bool   
+#  6   gPlusPlaceId  10000 non-null  float64
+#  7   gps           9927 non-null   object 
+# dtypes: bool(1), float64(1), object(6)
+# memory usage: 634.8+ KB
+
+df.iloc[0]
+name                                   Diamond Valley Lake Marina
+price                                                        None
+address                        [2615 Angler Ave, Hemet, CA 92545]
+hours           [[Monday, [['6:30 am--4:15 pm']]], [Tuesday, [...
+phone                                              (951) 926-7201
+closed                                                      False
+gPlusPlaceId                              104699454385822121984.0
+gps                                      [33.703804, -117.003209]
+Name: 0, dtype: object
+
+================================================================================================================
+
+
+FULL SET: (11_453_845, 8)
+
+df_reviews.info()
+
+# Int64Index: 10000 entries, 10747508 to 9176643
+# Data columns (total 8 columns):
+#  #   Column          Non-Null Count  Dtype  
+# ---  ------          --------------  -----  
+#  0   rating          10000 non-null  int64  
+#  1   reviewerName    10000 non-null  object 
+#  2   reviewText      7071 non-null   object 
+#  3   categories      9136 non-null   object 
+#  4   gPlusPlaceId    10000 non-null  float64
+#  5   unixReviewTime  9227 non-null   float64
+#  6   reviewTime      9227 non-null   object 
+#  7   gPlusUserId     10000 non-null  float64
+# dtypes: float64(3), int64(1), object(4)
+# memory usage: 703.1+ KB FULL: 786.5+ MB
