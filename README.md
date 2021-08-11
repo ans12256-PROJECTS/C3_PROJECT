@@ -1,7 +1,7 @@
 # [Google Local News Content-based Recommender](https://docs.google.com/presentation/d/1QKpEJZxsz7VvZhyjyRCmVpDFfDcbT5D-QfCfP0AfMNw/edit?usp=sharing)
 
-[Developers Manual](Developers_Manual.md)
-[Presentation](https://docs.google.com/presentation/d/1QKpEJZxsz7VvZhyjyRCmVpDFfDcbT5D-QfCfP0AfMNw/edit?usp=sharing)
+* [Developers Manual](Developers_Manual.md)
+* [Presentation](https://docs.google.com/presentation/d/1QKpEJZxsz7VvZhyjyRCmVpDFfDcbT5D-QfCfP0AfMNw/edit?usp=sharing)
 
 ## High level description of project
 Build a recommender(s) using a [Google Local News](https://cseweb.ucsd.edu/~jmcauley/datasets.html#google_local) database, deploy on AWS using Spark, finalize on the web using Flask. Explore scalability and performance.<br />
